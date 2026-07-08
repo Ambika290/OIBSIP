@@ -1,4 +1,60 @@
 import pandas as pd
+
+# Load Dataset
+df = pd.read_csv("car data.csv")
+
+# First 5 Rows
+print("First 5 Rows:")
+print(df.head())
+
+# Dataset Information
+print("\nDataset Info:")
+print(df.info())
+
+# Missing Values
+print("\nMissing Values:")
+print(df.isnull().sum())
+
+
+
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load Dataset
+df = pd.read_csv("car data.csv")
+
+# Histogram of Selling Price
+plt.hist(df['Selling_Price'])
+
+plt.title("Selling Price Distribution")
+plt.xlabel("Selling Price")
+plt.ylabel("Frequency")
+
+plt.show()
+
+
+#Graph 2: Present Price vs Selling Price
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load Dataset
+df = pd.read_csv("car data.csv")
+
+# Scatter Plot
+plt.scatter(df['Present_Price'], df['Selling_Price'])
+
+plt.title("Present Price vs Selling Price")
+plt.xlabel("Present Price")
+plt.ylabel("Selling Price")
+
+plt.show()
+
+
+
+Final Model: Random Forest Regressor
+import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, r2_score
